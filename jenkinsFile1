@@ -5,19 +5,29 @@ pipeline{
     agent any
     stages{
         stage('clone the repo'){
-            git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+            steps{
+                 git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+            }
         }
         stage('compile the code'){
-            sh 'mvn compile'
+            steps{
+                 sh 'mvn compile'
+            }
         }
         stage('review the code'){
-            sh 'mvn pwd:pwd'
+            steps{
+                 sh 'mvn pwd:pwd'
+            }
         }
         stage('unit testing'){
-            sh 'mvn test'
+            steps{
+                 sh 'mvn test'
+            }
         }
         stage('build code'){
-            sh 'mvn clean install package'
+            steps{
+                sh 'mvn clean install package'
+            }
         }
     }
 }
