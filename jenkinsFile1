@@ -3,6 +3,10 @@ pipeline{
         maven 'mymaven'
     }
     agent any
+    triggers{
+        cron(H/2 * * * *)
+        //pollSCM(h/20 * * * 1-5)
+    }
     stages{
         stage('clone the repo'){
             steps{
