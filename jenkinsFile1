@@ -4,8 +4,8 @@ pipeline{
     }
     agent any
     triggers{
-        cron(H/2 * * * *)
-        //pollSCM(h/20 * * * 1-5)
+        cron('H/2 * * * *')
+        //pollSCM('H/20 * * * 1-5')
     }
     stages{
         stage('clone the repo'){
